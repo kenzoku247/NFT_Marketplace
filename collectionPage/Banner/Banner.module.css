@@ -1,0 +1,75 @@
+.banner {
+    display: flex;
+}
+
+.banner_img {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.banner_img_img{
+    width: 99vw;
+    margin: 0;
+    max-height: 300px;
+    object-fit: cover;
+    user-select: none;
+}
+
+.banner_img_mobile{
+    display: none;
+}
+
+.banner_eye{
+    display: flex;
+    position: absolute;
+    right: 0;
+    padding: 1rem;
+    color: var(--icons-color);
+    border-color: var(--main-bg-color);
+}
+
+.banner_eye_icon{
+    width: 40px;
+    height: 40px;
+}
+
+.banner_qrCode_img{
+    display: flex;
+    position: absolute;
+    right: 5rem;
+    width: 200px;
+    height: 200px;
+}
+
+
+
+@media screen and (max-width: 35em) {
+    .banner_img_mobile{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner_img_mobile_img{
+        width: 99vw;
+        margin: 0;
+        max-height: 200px;
+        object-fit: cover;
+        user-select: none;
+    }
+
+    .banner_img{
+        display: none;
+
+    }
+}
+
+@media screen and (min-width: 35em) and (max-width:64em){
+    .banner_img_img{
+        width: 98vw;
+    }
+}

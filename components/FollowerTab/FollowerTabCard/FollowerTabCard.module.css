@@ -1,0 +1,122 @@
+.followerTabCard_box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--main-bg-color);
+  border-radius: 2rem;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  position: relative;
+}
+
+.followerTabCard_box:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.followerTabCard_rank {
+  position: absolute;
+  z-index: 1111;
+  background-color: var(--icons-color);
+  color: var(--main-bg-color);
+  line-height: 0;
+  margin: 1rem;
+  font-size: 0.8em;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2rem;
+  border: 1px solid var(--icons-color);
+  transition: all 0.3s ease-in;
+}
+
+.followerTabCard_rank:hover {
+  background-color: var(--main-bg-color);
+  color: var(--icons-color);
+}
+
+.followerTabCard_box_img {
+  grid-column: 1 / -1;
+}
+
+.followerTabCard_box_img_img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.followerTabCard_box_profile {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: -3rem;
+  position: relative;
+}
+
+/* .followerTabCard_box_profile::before {
+  position: absolute;
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--main-bg-color);
+  border-radius: 50%;
+  top: -20%;
+  left: 37%;
+  opacity: 50%;
+  z-index: 0;
+} */
+
+.followerTabCard_box_profile_img {
+  border-radius: 50%;
+  /* padding: .5rem; */
+  z-index: 11111;
+  width: 80px;
+  height: 80px;
+  border: 7px solid var(--main-bg-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.followerTabCard_box_profile_img:hover {
+  /* transition: all .3s ease-in; */
+  border: none;
+}
+
+.followerTabCard_box_info {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  justify-content: space-between;
+  margin-top: -1rem;
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
+}
+
+.followerTabCard_box_info h4 {
+  font: 1rem;
+  line-height: 1;
+}
+
+.followerTabCard_box_info p {
+  line-height: 1;
+}
+
+.followerTabCard_box_info_following a {
+  background-color: var(--shadow-dark-color);
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid var(--shadow-dark-color);
+  transition: all 0.2s ease-in;
+  user-select: none;
+}
+
+.followerTabCard_box_info_following a:hover {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 425px) {
+  .followerTabCard_box_info {
+    padding-inline: 2rem;
+  }
+
+  /* .followerTabCard_box {
+    grid-template-columns: repeat(3, 1fr);
+  } */
+}
+
