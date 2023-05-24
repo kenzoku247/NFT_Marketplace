@@ -6,17 +6,19 @@ import Router from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
+
 import { NFTMarketplaceAddress, NFTMarketplaceABI } from "./constants";
 
-// const projectId = process.env.API_KEY_IPFS;
-const projectId = "2Q6ZwKwFoarZwGDwVKrhvk2VZDc";
-// const projectSecretKey = process.env.API_KEY_SECRET_IPFS;
-const projectSecretKey = "3f668bd9883bfe722b430e50256f084c";
+const projectId = process.env.NEXT_PUBLIC_API_KEY_IPFS;
+// const projectId = "2Q6ZwKwFoarZwGDwVKrhvk2VZDc";
+const projectSecretKey = process.env.NEXT_PUBLIC_API_KEY_SECRET_IPFS;
+// const projectSecretKey = "3f668bd9883bfe722b430e50256f084c";
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
   "base64"
 )}`;
 
-const subDomain = "kma-nft-marketplace.infura-ipfs.io";
+// const subDomain = "kma-nft-marketplace.infura-ipfs.io";
+const subDomain = process.env.NEXT_PUBLIC_SUBDOMAIN;
 
 const client = ipfsHttpClient({
   host: "infura-ipfs.io",
@@ -102,6 +104,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     try {
       const added = await client.add({ content: file });
       const url = `https://${subDomain}/ipfs/${added.path}`;
+      // console.log(url);
       return url;
     } catch (error) {
       console.log("Error while uploading to IPFS");
@@ -152,7 +155,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const fetchNFTs = async () => {
     try {
       if (currentAccount) {
-        const provider = new ethers.providers.JsonRpcProvider();
+        const provider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_POLYGON_MUMBAI_RPC);
         const contract = fetchContract(provider);
 
         const data = await contract.fetchMarketItems();
