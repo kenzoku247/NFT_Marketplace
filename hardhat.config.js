@@ -1,4 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config({path:__dirname+'/.env.local'});
+
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -6,10 +8,8 @@ module.exports = {
   networks: {
     hardhat: {},
     polygon_mumbai: {
-      url: "https://polygon-mumbai.g.alchemy.com/v2/MmIOTVPWOl0aDGLaM6vTrCWhB8kqBmUW",
-      accounts: [
-        `0x${"de9be858da4a475276426320d5e9262ecfc3ba460bfac56360bfa6c4c28b4ee0"}`,
-      ],
+      url: process.env.NEXT_PUBLIC_POLYGON_MUMBAI_RPC,
+      accounts: [`0x${process.env.NEXT_PUBLIC_PRIVATE_KEY}`],
     },
   },
 };
