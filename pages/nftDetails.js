@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 

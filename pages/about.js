@@ -50,20 +50,20 @@ const about = () => {
           <div className={Style.about_box_hero_left}>
             <h1>👋 About Us.</h1>
             <p>
-              We're impartial and independent, and every day we create
+              We&apos;re impartial and independent, and every day we create
               distinctive, word-class programmes and content which inform,
               educate and entertain millions of people in the around the world.
             </p>
           </div>
           <div className={Style.about_box_hero_right}>
-            <Image src={images.hero2} className={Style.about_box_hero_right_img}/>
+            <Image src={images.hero2} className={Style.about_box_hero_right_img} alt="hero2"/>
           </div>
         </div>
 
         <div className={Style.about_box_title}>
           <h2>🏢 Founder</h2>
           <p>
-            We're impartial and independent, and every day we create
+            We&apos;re impartial and independent, and every day we create
             distinctive, word-class programmes and content
           </p>
         </div>
@@ -71,7 +71,7 @@ const about = () => {
         <div className={Style.about_box_founder}>
           <div className={Style.about_box_founder_box}>
             {founderArr.map((el, i) => (
-              <div className={Style.about_box_founder_box_img}>
+              <div className={Style.about_box_founder_box_img} key={i+1}>
                 <Image
                   src={el.image}
                   alt={el.name}
@@ -87,7 +87,7 @@ const about = () => {
         <div className={Style.about_box_title}>
           <h2>🚀 Fast Facts</h2>
           <p>
-            We're impartial and independent, and every day we create
+            We&apos;re impartial and independent, and every day we create
             distinctive, word-class programmes and content
           </p>
         </div>
@@ -95,7 +95,7 @@ const about = () => {
         <div className={Style.about_box_founder_box_facts}>
           <div className={Style.about_box_founder_box_facts_box}>
             {factsArr.map((el, i) => (
-              <div className={Style.about_box_founder_box_facts_box_info}>
+              <div className={Style.about_box_founder_box_facts_box_info} key={i+1}>
                 <h3>{el.title}</h3>
                 <p>{el.info}</p>
               </div>

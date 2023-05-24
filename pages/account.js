@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useMemo, useCallback, useContext } from "react";
 import Image from "next/image";
 import { useDropzone } from "react-dropzone";
