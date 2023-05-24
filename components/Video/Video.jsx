@@ -13,7 +13,7 @@ const Video = () => {
         </h1>
         <p>
           Check out our hottest videos. View more and share more new perspective
-          on just about any topic. Everyone's welcome.
+          on just about any topic. Everyone&apos;s welcome.
         </p>
 
         <div className={Style.video_box_frame}>
